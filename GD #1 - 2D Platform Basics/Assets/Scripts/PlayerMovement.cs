@@ -126,6 +126,6 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         isAlive = true;
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
