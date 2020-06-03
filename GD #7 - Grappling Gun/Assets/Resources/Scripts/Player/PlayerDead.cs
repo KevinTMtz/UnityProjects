@@ -10,7 +10,7 @@ public class PlayerDead : MonoBehaviour
     private DistanceJoint2D joint;
     private LineRenderer line;
     private GrapplingHook grapplingHook;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
 
     private int playerLives;
     private float timeLeft;
@@ -30,14 +30,11 @@ public class PlayerDead : MonoBehaviour
         joint = GetComponent<DistanceJoint2D>();
         line = GameObject.Find("LineRenderer").GetComponent<LineRenderer>();
         grapplingHook = FindObjectOfType<GrapplingHook>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         RestartTimer();
 
         playerLives = 3;
-        //gameOverPanel = GameObject.Find("GameOverPanel");
-        //time = GameObject.Find("Time");
-        //lives = GameObject.Find("Lives");
     }
 
     // Update is called once per frame
@@ -83,7 +80,7 @@ public class PlayerDead : MonoBehaviour
             StartCoroutine(WaitToReceiveDamage());
             ableToDamage = false;
             transform.position = spawnerTransform.position;
-            rigidbody.velocity = new Vector2(0,0);
+            rb.velocity = new Vector2(0,0);
 
             joint.autoConfigureDistance = true;
             joint.enabled = false;
@@ -109,7 +106,7 @@ public class PlayerDead : MonoBehaviour
             StartCoroutine(WaitToReceiveDamage());
             ableToDamage = false;
             transform.position = spawnerTransform.position;
-            rigidbody.velocity = new Vector2(0,0);
+            rb.velocity = new Vector2(0,0);
 
             joint.autoConfigureDistance = true;
             joint.enabled = false;

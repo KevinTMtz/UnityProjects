@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    private LineRenderer renderer;
+    private LineRenderer rendererLine;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<LineRenderer>();
+        rendererLine = GetComponent<LineRenderer>();
 
-        renderer.startColor = Color.black;
-        renderer.endColor = Color.black;
+        rendererLine.startColor = Color.black;
+        rendererLine.endColor = Color.black;
         Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
-        renderer.material = whiteDiffuseMat;
+        rendererLine.material = whiteDiffuseMat;
     }
 
     // Update is called once per frame

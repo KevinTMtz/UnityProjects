@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Rise
-    clip: {fileID: 8300000, guid: d37ce33ddd4714734ac01dbf0d54c754, type: 3}
+    clip: {fileID: 8300000, guid: 32e147eca7be44f499215d5b43f558eb, type: 3}
     volume: 0.5
     loop: 1
     source: {fileID: 0}
